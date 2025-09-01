@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tech's Homepage</title>
+    <style>
+        @font-face{
+            font-family: "Mulish";
+            src: url("fonts/mulish.eot");
+            src: url("fonts/mulish.eot?#iefix")format("embedded-opentype"),
+                 url("fonts/mulish.woff")format("woff"),
+                 url("fonts/mulish.woff2")format("woff2"),
+                 url("fonts/mulish.ttf")format("truetype"),
+                 url("fonts/mulish.svg#Mulish")format("svg");
+            font-weight:normal;
+            font-style:normal;
+            font-display:swap;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html,body {
+            height: 100%; 
+            margin: 0;
+            padding: 0;
+            font-size: 16pt;
+        }
+
+        body {
+            width:100%;
+
+            display:flex; 
+                       
+            font-family: "Mulish";
+            line-height: 1.6;
+            color: #333;
+
+            background-image: url('/Users/josh/Library/CloudStorage/Dropbox/Pictures/Collections/Furs/1212331757.blotch_refresh.jpg');
+            background-position: center;            /* Center the image */
+            background-repeat: no-repeat;           /* Prevent tiling */
+            background-size: cover;  
+        }
+
+        .backdrop {
+            width: 100%;
+            height: 100%;
+
+            display:flex; 
+            flex-direction: column;
+            justify-content: center;   /* horizontal alignment */
+            align-items: center;       /* vertical alignment */
+
+            background-color: rgba(0,0,0,0.7);
+        }
+
+        .destination {
+            background-color: rgba(0,0,0,0.5);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            display: flex;
+            flex-direction: row;
+            align-items:center;
+            margin-bottom:1.5em;
+        }
+
+        .icon-container {
+            width :4em;
+            height:2em;
+            margin-right:1.5em;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content:center;
+            opacity: 0.8;
+        }
+
+        .icon {
+            width: 2em;
+            height: 2em;
+        }
+
+        .icon-small {
+            width:  1.5em;
+            height: 1.5em;
+        }
+
+        .plus {
+            position:relative;
+            bottom:2px;
+            font-weight:bold;
+            font-size: 1.6em;
+        }
+
+        input[type="text"] {
+            background:none;
+            border:solid 2px white;
+            color: white;
+            padding: .4em;
+        }
+
+        input[type="text"]:focus {
+            border-color: #4A90E2;    /* Custom border color */
+            box-shadow: 0 0 5px rgba(74, 144, 226, 0.5); /* Glow effect */
+        }
+    </style>
+</head>
+<body>
+    <div class="backdrop">
+
+        <div class="destination">
+            <div class="icon-container">
+                <img src="icons/globe.svg" alt="Icon" class="icon-small"
+                     style="margin-right: .2em">
+                <div class="plus" style="margin-right: .15em">+</div>
+                <img src="icons/google.svg" alt="Icon" class="icon-small">
+            </div>
+            <input id="google" type="text" />
+        </div>
+
+        <div class="destination">
+            <div class="icon-container">
+                <img src="icons/openai.svg" alt="Icon" class="icon">
+            </div>
+            <input id="chatgpt" type="text" />
+        </div>
+
+    </div>
+
+    <script>
+    window.addEventListener('DOMContentLoaded', () => {
+      const input = document.getElementById('google');
+      input.focus();      // put the cursor in the input
+      input.select();     // select the text
+    });
+    </script>
+</body>
+</html>
